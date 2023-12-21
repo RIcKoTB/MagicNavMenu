@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&family=Inter:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --clr: #222327;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--clr);
+}
+
+.navigation {
+    position: relative;
+    width: 70px; /* Adjusted width for vertical layout */
+    height: 400px; /* Adjusted height for vertical layout */
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column; /* Updated to column for vertical layout */
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: column; /* Updated to column for vertical layout */
+    width: 100%; /* Updated to 100% for full width */
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.navigation ul li.active a .icon{
+    transform: translateX(-55px);
+}
+
+.navigation ul li a .text{
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.navigation ul li.active a .text{
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.indicator{
+   position:relative;
+   top: -82%;
+   width: 70px;
+   height: 50px;
+   background: #a9e9b7; 
+   border-radius: 50%;
+   border: 0px solid var(--clr);
+   transition: 0.5s;
+}
+
+.indicator::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr);
+}
+
+.indicator::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 0 var(--clr);
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+    /* Update the translateX to translateY for vertical positioning */
+    transform: translateY(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+    /* Update the translateX to translateY for vertical positioning */
+    transform: translateY(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+    /* Update the translateX to translateY for vertical positioning */
+    transform: translateY(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+    /* Update the translateX to translateY for vertical positioning */
+    transform: translateY(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+    /* Update the translateX to translateY for vertical positioning */
+    transform: translateY(calc(70px * 4));
+}
+
+
+
